@@ -1,0 +1,92 @@
+
+ /* **Tablet */
+ @media (min-width: 740px) and (max-width: 1023px) {
+     .hide-on-tablet {
+         display: none;
+        }
+        .header__cart {
+            width: 80px;
+            text-align: right;
+        }
+        .header__cart-list::after {
+            display: none;
+        }
+        .header__cart-list {
+            padding: 0 calc((100% - 644px)/2);
+        }
+    } 
+    /** Tablet and mobile */
+    @media (max-width: 1023px) {
+        :root {
+            --header-height:68px;
+            --navbar-height:0px;
+        }
+        .app__content-table-mobile-list {
+            display: flex;
+            text-decoration: none;
+        }
+        .hide-on-tablet-mobile{
+            display: none;
+        }
+        .header__cart-list {
+            position: fixed;
+            width: 100%;
+            top: var(--header-height);
+        }
+        .header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 10;
+    }
+    .header__sort-bar {
+        display: flex;
+    }
+    .app__container {
+        margin-top: calc(var(--header-height) + var(--header-short-bar-height));
+    }
+    .mobile-category__list {
+        display: flex;
+    }
+}
+/** mobile */
+@media (max-width:739px) {
+    .app__content {
+        padding: 8px;
+    }
+    .hide-on-mobile {
+        display: none;
+    }
+    .header-with-search {
+        justify-content: space-between;
+    }
+    .header__logo {
+        text-align: center;
+    }
+    .header__search {
+        z-index: 1;
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        height: 46px;
+        border: 1px solid #ccc;
+        animation: headerSearcheffect 0.5s ease-in-out ;
+        display: none;
+    }
+    @keyframes headerSearcheffect {
+        from {
+            opacity: 0;
+            top: calc(var(--header-height)/2);
+        }
+        to {
+            top: var(--header-height);
+        }
+    }
+    .header__icon-search {
+        display: block;
+    }
+    .container-pagination-mobile {
+        display: flex;
+    }
+}
